@@ -89,13 +89,14 @@ namespace matrix
         int column_A = (matrix_A[0]).size();
         int row_B = matrix_B.size();
         int column_B = (matrix_B[0]).size();
+
+        //TODO: row_A == column_B
+
         std::vector<std::vector<int>> matrix_B_T = transpose(matrix_B);
 
         std::vector<std::vector<int>> result(row_A, std::vector<int>(column_B));
         int count = 0;
         int sum = 0;
-
-        //TODO: row_A == column_B
 
         for(int i = 0; i < row_A; i++)
         {
@@ -112,15 +113,28 @@ namespace matrix
             }
         }
 
-        
-
-        
-
-
-    return result;
-
+        return result;
         
     }
+    
+    //flips matrix on horizontal axis
+    std::vector<std::vector<int>> horizontal_flip(std::vector<std::vector<int>> matrix)
+    {
+        int row = matrix.size();
+        int column = (matrix[0]).size();
+
+        std::vector<std::vector<int>> result;
+
+        for(int i = row - 1; i >= 0; i--)
+        {
+            result.push_back(matrix[i]);
+        }
+
+        return result;
+
+    }
+
+    
     
 
     
