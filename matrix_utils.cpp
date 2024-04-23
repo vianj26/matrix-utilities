@@ -82,4 +82,46 @@ namespace matrix
         return result;
 
     }
+
+    std::vector<std::vector<int>> multiply(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
+    {
+        int row_A = matrix_A.size();
+        int column_A = (matrix_A[0]).size();
+        int row_B = matrix_B.size();
+        int column_B = (matrix_B[0]).size();
+        std::vector<std::vector<int>> matrix_B_T = transpose(matrix_B);
+
+        std::vector<std::vector<int>> result(row_A, std::vector<int>(column_B));
+        int count = 0;
+        int sum = 0;
+
+        //TODO: row_A == column_B
+
+        for(int i = 0; i < row_A; i++)
+        {
+            for(int j = 0; j < column_B; j++)
+            {
+
+                for(int k = 0; k < row_B; k++)
+                {
+                    sum = sum + matrix_A[i][k] * matrix_B_T[j][k];
+                }
+
+                result[i][j] = sum;
+                sum = 0;
+            }
+        }
+
+        
+
+        
+
+
+    return result;
+
+        
+    }
+    
+
+    
 }
