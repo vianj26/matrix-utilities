@@ -31,7 +31,15 @@ int main()
         {3, 4}
     };
     
-    std::vector<std::vector<int>> result = matrix::horizontal_flip(matrix_D);
+    std::cout << "Matrix A: \n";
+
+    matrix::print_matrix(matrix_A);
+
+    std::vector<std::vector<int>> A_transpose = matrix::transpose(matrix_A);
+
+    std::vector<std::vector<int>> result = matrix::vertical_flip(A_transpose);
+
+    std::cout << "Matrix A \"90 degree\" clockwise: \n";
 
     matrix::print_matrix(result);
 
