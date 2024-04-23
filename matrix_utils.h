@@ -12,6 +12,8 @@ namespace matrix
 
     std::vector<std::vector<int>> subtract(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B);
 
+    std::vector<std::vector<int>> multiply(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B);
+
 
 }
 
