@@ -121,7 +121,6 @@ namespace matrix
     std::vector<std::vector<int>> horizontal_flip(std::vector<std::vector<int>> matrix)
     {
         int row = matrix.size();
-        int column = (matrix[0]).size();
 
         std::vector<std::vector<int>> result;
 
@@ -134,8 +133,28 @@ namespace matrix
 
     }
 
-    
-    
+    //flips matrix on vertical axis
+    std::vector<std::vector<int>> vertical_flip(std::vector<std::vector<int>> matrix)
+    {
+        int row = matrix.size();
+        int column = (matrix[0]).size();
 
+        std::vector<std::vector<int>> result;
+        std::vector<int> temp;
+
+        for(int i = 0; i < row; i++)
+        {
+            for(int k = column - 1; k >= 0; k--)
+            {
+                temp.push_back(matrix[i][k]);
+            }
+
+            result.push_back(temp);
+            temp.clear();
+        }
+
+        return result;
+
+    }
     
 }
