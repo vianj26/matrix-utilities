@@ -18,7 +18,7 @@ int main()
         {7,8,9}
     };
     
-    std::vector<std::vector<int>> result = matrix::add(matrix_A, matrix_B);
+    std::vector<std::vector<int>> result = matrix::subtract(matrix_A, matrix_B);
 
 
     matrix::print_matrix(result);

@@ -42,4 +42,25 @@ namespace matrix
         return result;
 
     }
+
+    std::vector<std::vector<int>> subtract(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
+    {
+        
+
+        int row = matrix_A.size();
+        int column = matrix_A.size();
+
+        std::vector<std::vector<int>> result(row, std::vector<int>(column));
+
+        for(int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < column; j++)
+            {
+                result[i][j] = matrix_A[i][j] - matrix_B[i][j];
+            }
+        }
+
+        return result;
+
+    }
 }
