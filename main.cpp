@@ -4,16 +4,25 @@
 
 int main()
 {
-    std::vector<std::vector<int>> matrix = 
+    std::vector<std::vector<int>> matrix_A = 
     {
         {1,2,3},
         {4,5,6},
         {7,8,9}
     };
 
-    int row, column;
+    std::vector<std::vector<int>> matrix_B = 
+    {
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
     
-    matrix::print_matrix(matrix);
+    std::vector<std::vector<int>> result = matrix::add(matrix_A, matrix_B);
+
+
+    matrix::print_matrix(result);
 
     return 0;
+
 }
