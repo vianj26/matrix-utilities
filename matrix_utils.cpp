@@ -22,6 +22,25 @@ namespace matrix
         
     }
 
+    std::vector<std::vector<int>> transpose(std::vector<std::vector<int>> matrix)
+    {
+        int row = matrix.size();
+        int column = (matrix[0]).size();
+
+        std::vector<std::vector<int>> result(column, std::vector<int>(row));
+
+        for(int i = 0; i < row; i++)
+        {
+            for(int j = 0; j < column; j++)
+            {
+                result[j][i] = matrix[i][j];
+            }
+        }
+
+        return result;
+
+    }
+
     std::vector<std::vector<int>> add(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
     {
         
