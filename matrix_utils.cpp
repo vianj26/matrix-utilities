@@ -83,6 +83,7 @@ namespace matrix
 
     }
 
+    //multiply matrix_A with matrix_B
     std::vector<std::vector<int>> multiply(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
     {
         int row_A = matrix_A.size();
