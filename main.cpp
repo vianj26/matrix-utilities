@@ -31,7 +31,7 @@ int main()
         {3, 4}
     };
     
-    std::vector<std::vector<int>> result = matrix::multiply(matrix_A, matrix_B);
+    std::vector<std::vector<int>> result = matrix::horizontal_flip(matrix_D);
 
     matrix::print_matrix(result);
 

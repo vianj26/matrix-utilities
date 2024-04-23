@@ -14,6 +14,8 @@ namespace matrix
 
     std::vector<std::vector<int>> multiply(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B);
 
+    std::vector<std::vector<int>> horizontal_flip(std::vector<std::vector<int>> matrix);
+
 
 }
 
