@@ -93,7 +93,11 @@ namespace matrix
         int row_B = matrix_B.size();
         int column_B = (matrix_B[0]).size();
 
-        //TODO: row_A == column_B
+        if(row_A != column_B)
+        {
+            std::cout << "Matrix incompatible with multiplication." << std::endl;
+            throw std::invalid_argument("Matrix imcompatible with multiplication.");
+        }
 
         std::vector<std::vector<int>> matrix_B_T = transpose(matrix_B);
 
@@ -105,7 +109,6 @@ namespace matrix
         {
             for(int j = 0; j < column_B; j++)
             {
-
                 for(int k = 0; k < row_B; k++)
                 {
                     sum = sum + matrix_A[i][k] * matrix_B_T[j][k];
@@ -113,7 +116,9 @@ namespace matrix
 
                 result[i][j] = sum;
                 sum = 0;
+
             }
+
         }
 
         return result;
@@ -163,7 +168,6 @@ namespace matrix
     {
         int row = matrix.size();
         int column = (matrix[0]).size();
-
         
         if (row != column) 
         {
