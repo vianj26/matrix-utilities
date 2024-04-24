@@ -40,7 +40,8 @@ namespace matrix
         return result;
 
     }
-
+    
+    //Add Matrix A and Matrix B
     std::vector<std::vector<int>> add(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
     {
         
@@ -62,6 +63,7 @@ namespace matrix
 
     }
 
+    //Subtract Matrix B from Matrix
     std::vector<std::vector<int>> subtract(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
     {
         
@@ -83,7 +85,7 @@ namespace matrix
 
     }
 
-    //multiply matrix_A with matrix_B
+    //Multiply Matrix A and Matrix B
     std::vector<std::vector<int>> multiply(std::vector<std::vector<int>> matrix_A, std::vector<std::vector<int>> matrix_B)
     {
         int row_A = matrix_A.size();
@@ -134,7 +136,6 @@ namespace matrix
 
     }
 
-    //flips matrix on vertical axis
     std::vector<std::vector<int>> vertical_flip(std::vector<std::vector<int>> matrix)
     {
         int row = matrix.size();
@@ -156,6 +157,53 @@ namespace matrix
 
         return result;
 
+    }
+
+    int determinant(std::vector<std::vector<int>> matrix)
+    {
+        int row = matrix.size();
+        int column = (matrix[0]).size();
+
+        
+        if (row != column) 
+        {
+            std::cout << "Only square matrix(same row and column) can have determinant." << std::endl;
+            throw std::invalid_argument("Only square matrix(same row and column) can have determinant.");
+        }
+        
+        int column_position;
+        int product = 1, result = 0;
+
+        for(int i = 0; i < column; i++)
+        {
+            for(int j = 0; j < row; j++)
+            {
+                column_position = i + j;
+                if(column_position > column - 1) column_position -= column;
+                product *= matrix[j][column_position];
+            }
+
+            result += product;
+            product = 1;
+        }
+
+        std::vector<std::vector<int>> matrix_T = vertical_flip(matrix);
+
+        for(int i = 0; i < column; i++)
+        {
+            for(int j = 0; j < row; j++)
+            {
+                column_position = i + j; //3
+                if(column_position > column - 1) column_position -= column;
+                product *= matrix_T[j][column_position];
+            }
+
+            result -= product;
+            product = 1;
+            
+        }
+
+        return result;
     }
     
 }

@@ -17,7 +17,8 @@ namespace matrix
     std::vector<std::vector<int>> horizontal_flip(std::vector<std::vector<int>> matrix);
 
     std::vector<std::vector<int>> vertical_flip(std::vector<std::vector<int>> matrix);
-    
+
+    int determinant(std::vector<std::vector<int>> matrix);
 
 
 }
