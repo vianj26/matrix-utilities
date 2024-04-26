@@ -1,6 +1,9 @@
 #ifndef MATRIX_UTILS_H
 #define MATRIX_UTILS_H
 
+#include "common.h"
+
+
 
 namespace matrix
 {
@@ -19,7 +22,6 @@ namespace matrix
     std::vector<std::vector<int>> vertical_flip(std::vector<std::vector<int>> matrix);
 
     int determinant(std::vector<std::vector<int>> matrix);
-
 
 }
 
