@@ -1,54 +1,19 @@
 #include "matrix_utils.h"
 #include "eq_parser.h"
+#include "eq_solver.h"
 
 void matrix_sample();
 
 int main()
 {
-    Equation eq1{"5x +2y =     7"};
-    Equation eq2{"4x + 3y = 10"};
+    Equation eq1("2x+3y-1z=5");
+    Equation eq2("1x+2y+1z=8");
+    Equation eq3("3x-1y+4z=10");
 
-    std::cout << Equation::equation_count << std::endl;
+
+    Solver::solve({eq1, eq2, eq3});
 
 
     return 0;
 
 }
-
-/*
-void matrix_sample()
-{
-    std::vector<std::vector<int>> matrix_A = 
-    {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9}
-    };
-
-    std::vector<std::vector<int>> matrix_B = 
-    {
-        {1,3,3},
-        {4,5,6},
-        {7,8,9}
-    };
-
-    std::vector<std::vector<int>> matrix_C = 
-    {
-        {1,2,3},
-        {4,5,6}
-    };
-
-    std::vector<std::vector<int>> matrix_D =
-    {
-        {1, 2},
-        {2, 3},
-        {3, 4}
-    };
-
-    matrix::print_matrix(matrix_B);
-
-    int result= matrix::determinant(matrix_B);
-
-    std::cout << result << std::endl;
-}
-*/

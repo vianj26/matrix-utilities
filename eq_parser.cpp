@@ -4,6 +4,8 @@ int Equation::equation_count = 0;
 
 Equation::Equation(std::string equation)
 {
+    //TODO: check proper equation format : ax + by + ... = c
+    
     for(char& c : equation)
     {
         if( c == 'c') throw std::invalid_argument("Use other variable other than c.");
@@ -15,27 +17,45 @@ Equation::Equation(std::string equation)
         if(c != ' ') this->equation = this->equation + c;
     }
 
-    std::cout << this->equation << std::endl;
-
+    //check and transform if the equation have negative constant value to avoid "=-" in the equation
+    if((this->equation).find("=-") != std::string::npos)
+    {
+        transform_equation();
+    }
     
     //break string into approprieate equation member(ax, by, ... =c)
     std::string temp;
     int length = (this->equation).size();
-    int count = 0;
+    int position=0;
 
-    for(int i = 0; i < length; i++)
+    //condition when the first number of the equation is negative
+    if((this->equation)[0] == '-')
     {
-        if((this->equation)[i] == '+' || (this->equation)[i] == '=') 
+        position = 1;
+        temp = '-';
+    } 
+
+    if(this->equation[0] == '+')
+    {
+        position = 1;
+        temp = "";
+    }
+
+    for(int i = position; i < length; i++)
+    {
+
+        if((this->equation)[i] == '+' || (this->equation)[i] == '=' || (this->equation)[i] == '-') 
         {
             (this->parsed).push_back(temp);
             temp = (this->equation)[i];
         }
         else
-        {
+        {   
             temp +=(this->equation)[i];
         }
     }
 
+    //add the last temp value to the vector
     (this->parsed).push_back(temp);
 
     
@@ -82,11 +102,6 @@ Equation::Equation(std::string equation)
 
     }
 
-    for(auto& pair : this-> values)
-    {
-        std::cout << pair.first << ": " << pair.second << std::endl;
-    }
-
     equation_count++;
 
 }
@@ -96,3 +111,19 @@ Equation::~Equation()
     equation_count--;
 }
 
+
+void Equation::transform_equation()
+{
+    int position = (this->equation).find("=-");
+    int length = (this->equation).length();
+
+    (this->equation).replace(position, 2, "=");
+
+    for(int i = 0; i < length; i++)
+    {
+        if((this->equation)[i] == '-')
+         {this->equation[i] = '+';}
+        else if(this->equation[i] == '+')
+         {this->equation[i] = '-';}
+    }
+}
