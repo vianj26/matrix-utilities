@@ -6,7 +6,9 @@ void matrix_sample();
 int main()
 {
     Equation eq1{"5x +2y =     7"};
-    Equation eq2{"4c + 3y = 10"};
+    Equation eq2{"4x + 3y = 10"};
+
+    std::cout << Equation::equation_count << std::endl;
 
 
     return 0;

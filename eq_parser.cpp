@@ -1,10 +1,12 @@
 #include "eq_parser.h"
 
+int Equation::equation_count = 0;
+
 Equation::Equation(std::string equation)
 {
     for(char& c : equation)
     {
-        if( c = 'c') throw std::invalid_argument("Use other variable other than c.");
+        if( c == 'c') throw std::invalid_argument("Use other variable other than c.");
     }
 
     //remove spaces in the linear equation;
@@ -85,5 +87,12 @@ Equation::Equation(std::string equation)
         std::cout << pair.first << ": " << pair.second << std::endl;
     }
 
+    equation_count++;
+
+}
+
+Equation::~Equation()
+{
+    equation_count--;
 }
 
