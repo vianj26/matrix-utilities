@@ -17,6 +17,8 @@ class Equation
 
         ~Equation();
 
+        void transform_equation();
+
 };
 
 
