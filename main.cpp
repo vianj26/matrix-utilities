@@ -1,8 +1,19 @@
-#include <iostream>
-#include <vector>
 #include "matrix_utils.h"
+#include "eq_parser.h"
+
+void matrix_sample();
 
 int main()
+{
+    Equation eq1{"5x +2y =     7"};
+
+
+    return 0;
+
+}
+
+/*
+void matrix_sample()
 {
     std::vector<std::vector<int>> matrix_A = 
     {
@@ -36,7 +47,5 @@ int main()
     int result= matrix::determinant(matrix_B);
 
     std::cout << result << std::endl;
-
-    return 0;
-
 }
+*/

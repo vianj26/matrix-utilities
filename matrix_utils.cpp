@@ -17,7 +17,7 @@ namespace matrix
                 std::cout << matrix[i][j] << "\t";
             }
 
-            std::cout << "\b\n";
+            std::cout <<"\b\n";
         }
         
     }
