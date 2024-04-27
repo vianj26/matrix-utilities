@@ -19,6 +19,16 @@ class Equation
 
         void transform_equation();
 
+        static void print_list(){}
+
+        template<typename T, typename... list>
+        static void print_list(T eq, list... equations)
+        {
+            std::cout << eq.equation << std::endl;
+            print_list(equations...);
+        }
+        
+
 };
 
 
