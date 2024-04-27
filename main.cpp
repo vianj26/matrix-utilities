@@ -14,6 +14,10 @@ int main()
     Equation::print_list(eq1, eq2, eq3);
 
 
+    for(auto member : eq3.values)
+    {
+        std::cout << member.first << ": " << member.second << std::endl;
+    }
 
 
     return 0;
