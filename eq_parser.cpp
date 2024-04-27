@@ -114,6 +114,7 @@ Equation::~Equation()
 
 void Equation::transform_equation()
 {
+
     int position = (this->equation).find("=-");
     int length = (this->equation).length();
 
