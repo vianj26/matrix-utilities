@@ -127,4 +127,6 @@ void Equation::transform_equation()
         else if(this->equation[i] == '+')
          {this->equation[i] = '-';}
     }
+
+    (this->equation).insert(0, "-");
 }
