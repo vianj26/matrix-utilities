@@ -1,6 +1,5 @@
 #include "eq_solver.h"
 
-std::unordered_map<std::string, std::vector<double>> Solver::columns{};
 
 
 /*

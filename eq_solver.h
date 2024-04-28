@@ -8,12 +8,11 @@
 class Solver
 {
     public:
-        static std::unordered_map<std::string, std::vector<double>> columns;
-
-        static void solve(){};
+        std::unordered_map<std::string, std::vector<double>> columns;
+        int equation_count = 0;
 
         template<typename T, typename... list>
-        static void solve(T& equation, list&... equations)
+        Solver(T& equation, list&... equations)
         {
             std::cout << equation.equation << std::endl;
             for(auto& member : equation.values)
@@ -22,12 +21,29 @@ class Solver
                 (columns[member.first]).push_back(member.second);
             }
 
+            equation_count++;
+
             solve(equations...);
         }
 
-        static bool is_valid()
+        void solve()
         {
-            return (Solver::columns).size() + 1 == Equation::equation_count;
+            if(this->columns.size() != (equation_count + 1)) throw std::invalid_argument("Invalid to solve.");
+        };
+
+        template<typename T, typename... list>
+        void solve(T& equation, list&... equations)
+        {
+            std::cout << equation.equation << std::endl;
+            for(auto& member : equation.values)
+            {
+
+                (columns[member.first]).push_back(member.second);
+            }
+
+            equation_count++;
+
+            solve(equations...);
         }
 
 };
