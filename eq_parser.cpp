@@ -1,7 +1,5 @@
 #include "eq_parser.h"
 
-int Equation::equation_count = 0;
-
 Equation::Equation(std::string equation)
 {
     //TODO: check proper equation format : ax + by + ... = c
@@ -102,13 +100,6 @@ Equation::Equation(std::string equation)
 
     }
 
-    equation_count++;
-
-}
-
-Equation::~Equation()
-{
-    equation_count--;
 }
 
 

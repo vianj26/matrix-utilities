@@ -14,9 +14,12 @@ int main()
     Equation eq3("8x + 10y = -14");
     Equation eq4("8x + 10y = 14");
 
-    Solver::solve(eq1, eq2);
+    std::cout << "Solve 1: " << std::endl;
 
-    for(auto member : Solver::columns)
+    Solver solve1(eq1, eq2);
+    
+
+    for(auto member : solve1.columns)
     {
         std::cout << member.first << ": " << std::endl << "[";
         for(auto value : member.second)
@@ -26,8 +29,21 @@ int main()
         std::cout << "\b]" << std::endl;
     }
 
+    std::cout << solve1.equation_count << std::endl;
 
-    std::cout << std::boolalpha << Solver::is_valid() << std::endl;
+    Solver solve2(eq1, eq2);
+
+    for(auto member : solve2.columns)
+    {
+        std::cout << member.first << ": " << std::endl << "[";
+        for(auto value : member.second)
+        {
+            std::cout << value << ",";
+        }
+        std::cout << "\b]" << std::endl;
+    }
+
+    std::cout << solve2.equation_count << std::endl;
 
     return 0;
 }

@@ -6,7 +6,6 @@
 class Equation
 {
     public:
-        static int equation_count;
 
         std::string equation;
         std::vector<std::string> parsed;
@@ -14,8 +13,6 @@ class Equation
         std::unordered_map<std::string, double> values;
 
         Equation(std::string equation);
-
-        ~Equation();
 
         void transform_equation();
         void print();
