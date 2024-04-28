@@ -68,13 +68,13 @@ Equation::Equation(std::string equation)
             int length = member.size();
             std::string string_value = member.substr(1, length -1);
 
-            string_values['c'] = string_value;
+            string_values["c"] = string_value;
             continue;
         }
 
         //assign values to variable with string of double using hashmap
         int length = member.size();
-        char variable = member[length - 1];
+        std::string variable = member.substr(length-1, 1);
         std::string string_value = member.substr(0, length - 1);
 
         try
@@ -129,4 +129,13 @@ void Equation::transform_equation()
     }
 
     (this->equation).insert(0, "-");
+}
+
+void Equation::print()
+{
+    std::cout << this->equation << std::endl;
+    for(auto member : values)
+    {
+        std::cout << member.first << ": " << member.second << std::endl;
+    }
 }

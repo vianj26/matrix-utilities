@@ -4,10 +4,10 @@
 #include "common.h"
 #include "eq_parser.h"
 
-namespace Solver
+
+class Solver
 {
     
-
-}
+};
 
 #endif
