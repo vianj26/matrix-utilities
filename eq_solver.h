@@ -18,6 +18,7 @@ class Solver
         template<typename T, typename... list>
         Solver(T& equation, list&... equations)
         {
+            std::cout << "Equations: " << std::endl;
             std::cout << equation.equation << std::endl;
             for(auto& member : equation.values)
             {

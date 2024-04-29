@@ -164,6 +164,7 @@ namespace matrix
 
     }
 
+
     double determinant(std::vector<std::vector<double>> matrix)
     {
         int row = matrix.size();

@@ -12,6 +12,7 @@ void problem1()
     Solver solve1(eq1, eq2, eq3);
 }
 
+
 int main()
 {
     problem1();

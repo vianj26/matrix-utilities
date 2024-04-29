@@ -3,6 +3,7 @@
 
 void Solver::convert_to_matrix()
 {
+    
     //TODO: need correct arrangement inside the matrix
     for(auto& column : columns)
     {
@@ -33,6 +34,7 @@ void Solver::convert_to_matrix()
 
 
     //display matrix
+    std::cout << "Matrix: " << std::endl;
     for(auto& pair : matrix_list)
     {
         std::cout << pair.first << ": " << std::endl;
@@ -52,31 +54,24 @@ void Solver::convert_to_matrix()
         determinant_list[pair.first] = determinant;
     }
 
-    std::cout << "Matrix: " << std::endl;
-
-
-
-
-
     //determinant
     for(auto& pair : determinant_list)
     {
         if(pair.first != "c")
         {
-            std::cout << pair.first << ": " << determinant_list["c"] << "/" << (pair.second) << std::endl;
             variable_values[pair.first] = (pair.second)/determinant_list["c"];
         }
     }
 
     //display determinant list
-    std::cout << "Determinant: " << determinant_list.size() << std::endl;
+    std::cout << "Determinant: " << std::endl;
     for(auto& pair : determinant_list)
     {
         std::cout << pair.first << ": " << pair.second << std:: endl;
     }
 
     //display values
-    std::cout << "Values : " << std::endl;
+    std::cout << "Values: " << std::endl;
 
     for(auto& pair : variable_values)
     {
