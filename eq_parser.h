@@ -9,8 +9,8 @@ class Equation
 
         std::string equation;
         std::vector<std::string> parsed;
-        std::unordered_map<std::string, std::string> string_values;
-        std::unordered_map<std::string, double> values;
+        std::map<std::string, std::string> string_values;
+        std::map<std::string, double> values;
 
         Equation(std::string equation);
 
