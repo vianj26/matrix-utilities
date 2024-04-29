@@ -102,7 +102,6 @@ Equation::Equation(std::string equation)
 
 }
 
-
 void Equation::transform_equation()
 {
 
